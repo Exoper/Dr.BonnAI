@@ -7,7 +7,7 @@ from pygame import mixer
  
 cap = cv2.VideoCapture(0)
 detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor(r"C:\Users\Pulkit Pahuja\Desktop\ML\hackDTU\shape_predictor_68_face_landmarks.dat")
+predictor = dlib.shape_predictor(r"/home/exoper/Downloads/final/shape_predictor_68_face_landmarks.dat")
 
 my_irises=[]
 d=[]
@@ -19,7 +19,7 @@ def midpoint(p1 ,p2):
     return int((p1.x + p2.x)/2), int((p1.y + p2.y)/2)
 
 mixer.init()
-mixer.music.load(r"C:\Users\Pulkit Pahuja\Desktop\ML\hackDTU\Music\4.mp3")
+mixer.music.load(r"/home/exoper/Downloads/final/shape_predictor_68_face_landmarks.dat/Music/4.mp3")
 mixer.music.play()
  
 font = cv2.FONT_HERSHEY_PLAIN
@@ -46,7 +46,7 @@ def get_blinking_ratio(eye_points, facial_landmarks):
 
 
 def get_irises_location(frame_gray):
-        eye_cascade=cv2.CascadeClassifier( r'C:\Users\Pulkit Pahuja\Desktop\ML\hackDTU\haarcascades\haarcascade_eye_tree_eyeglasses.xml')
+        eye_cascade=cv2.CascadeClassifier( r'/home/exoper/Downloads/final/haarcascades/haarcascade_eye_tree_eyeglasses.xml')
         eyes = eye_cascade.detectMultiScale(frame_gray, 1.3, 5)  # if not empty - eyes detected
         
         irises=[]
@@ -160,18 +160,18 @@ while True:
             
             if (a<20.0000):
                #mixer.music.stop()
-                mixer.music.load(r"C:\Users\Pulkit Pahuja\Desktop\ML\hackDTU\Music\3.mp3")
+                mixer.music.load(r"/home/exoper/Downloads/final/Music/3.mp3")
                 mixer.music.play()
                 #flag=False
             elif(a>20.0000 and a<30.0000):
                 #mixer.music.stop()
-                mixer.music.load(r"C:\Users\Pulkit Pahuja\Desktop\ML\hackDTU\Music\2.mp3")
+                mixer.music.load(r"/home/exoper/Downloads/final/Music/2.mp3")
                 mixer.music.play()
                 #flag1=False
                 
             else:
                 #mixer.music.stop()
-                mixer.music.load(r"C:\Users\Pulkit Pahuja\Desktop\ML\hackDTU\Music\1.mp3")
+                mixer.music.load(r"/home/exoper/Downloads/final/shape_predictor_68_face_landmarks.dat/Music/1.mp3")
                 mixer.music.play()
                 #flag2=False
 
